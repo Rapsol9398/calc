@@ -10,10 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.umrechner.R;
+
 public class MainActivity extends AppCompatActivity {
 
-    private EditText octalInput;
-    private TextView hexOutput;
+    private EditText hexInput;
+    private TextView octalOutput;
     private Button convertButton, resetButton;
 
     @SuppressLint("MissingInflatedId")
@@ -22,26 +24,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        octalInput = findViewById(R.id.octalInput);
-        hexOutput = findViewById(R.id.hexOutput);
+        hexInput = findViewById(R.id.hexInput);
+        octalOutput = findViewById(R.id.octalOutput);
         convertButton = findViewById(R.id.convertButton);
         resetButton = findViewById(R.id.resetButton);
 
         convertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String octal = octalInput.getText().toString().trim();
-                if (octal.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Bitte eine Oktalzahl eingeben.", Toast.LENGTH_SHORT).show();
+                String hex = hexInput.getText().toString().trim();
+                if (hex.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Bitte eine Hexadezimalzahl eingeben.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 try {
-                    int decimal = Integer.parseInt(octal, 8);
-                    String hex = Integer.toHexString(decimal).toUpperCase();
-                    hexOutput.setText(hex);
+                    int decimal = Integer.parseInt(hex, 16);
+                    String octal = Integer.toOctalString(decimal);
+                    octalOutput.setText(octal);
                 } catch (NumberFormatException e) {
-                    Toast.makeText(MainActivity.this, "Ungültige Oktalzahl.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Ungültige Hexadezimalzahl.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -49,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                octalInput.setText("");
-                hexOutput.setText("");
+                hexInput.setText("");
+                octalOutput.setText("");
             }
         });
     }

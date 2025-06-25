@@ -6,16 +6,17 @@
     android:padding="24dp">
 
     <TextView
-        android:layout_width="167dp"
-        android:layout_height="89dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Hexadezimalzahl:"
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/octalInput"
+        android:id="@+id/hexInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Oktal eingeben" />
+        android:hint="Hexadezimalzahl hier eingeben"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/convertButton"
@@ -31,16 +32,19 @@
         android:paddingTop="16dp" />
 
     <TextView
-        android:id="@+id/hexOutput"
+        android:id="@+id/octalOutput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ergebnis in Hexadezimal"
-        android:textSize="20sp"/>
+        android:text=""
+        android:textSize="18sp"
+        android:background="#eeeeee"
+        android:padding="8dp" />
 
     <Button
         android:id="@+id/resetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Zurücksetzen" />
+        android:text="Reset"
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>
