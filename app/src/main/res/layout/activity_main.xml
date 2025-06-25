@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="167dp"
+        android:layout_height="89dp"
+        android:text="Hexadezimalzahl:"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/octalInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Oktal eingeben" />
+
+    <Button
+        android:id="@+id/convertButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Umrechnen" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oktalzahl:"
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
+
+    <TextView
+        android:id="@+id/hexOutput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ergebnis in Hexadezimal"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zurücksetzen" />
+
+</LinearLayout>
